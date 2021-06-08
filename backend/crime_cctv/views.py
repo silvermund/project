@@ -1,20 +1,25 @@
 from crime_cctv.models import CrimeDTO
-from crime_cctv.services import Crimecctvservices
-from common.services import CommonService
+from crime_cctv.services import Crimeservice
 
 class CrimeAPI(object):
 
     @staticmethod
     def main():
-        util = Crimecctvservices
+
         dto = CrimeDTO()
-        serv = CommonService
+        serv = Crimeservice()
+
         while 1:
-            m = input('1. print cctv 2.print xlsx')
+            m = input('1. print csv 2.print xlsx')
             if 1 == '0':
                 break
-            elif m ==  '1':
-                dto.dframe = util.new_model('crime')
-                CrimeAPI.print_this(dto.dframe)
-            elif menu == '2':
-                util.
+            elif m == '1':
+                dto.dframe = serv.new_model_csv('cctv_in_seoul.csv')
+                serv.print_dframe(dto.dframe)
+            elif m == '2':
+                dto.dframe = serv.new_model_xlsx('pop_in_seoul.xls')
+                serv.print_dframe(dto.dframe)
+            else:
+                continue
+
+CrimeAPI.main()

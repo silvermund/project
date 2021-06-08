@@ -1,21 +1,20 @@
 from crime_cctv.models import CrimeDTO
 import pandas as pd
-import xlwings as xw
+from common.services import CommonService
 
 
-class CrimeAPI(object):
+class Crimeservice(CommonService):
     dto = CrimeDTO()
 
     def new_model_csv(self, payload):
         this = self.dto
         this.context = './data/'
         this.fname = payload
-        df_csv = pd.read_csv(this.context + this.fname)
-        return df_csv
+        return pd.read_csv(this.context + this.fname)
 
-    def new_model_xlsx(self, this):
-        this = self.this
+
+    def new_model_xlsx(self, payload):
+        this = self.dto
         this.context = './data/'
         this.fname = payload
-        sheet = xw.Book(this.context + payload + '.xlsl').sheets['crime']
-        df_xlsx = pd.read_excel(this.context)
+        return pd.read_excel(this.context + this.fname)
