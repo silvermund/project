@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 export const UserMenu = () => (<nav>
         <ol>
-            <li><Link to='/signup-form'>회원가입</Link></li>
-            <li><Link to='/login-form'>로그인</Link></li>
+            <li><Link to='/signup'>회원가입</Link></li>
+            <li><Link to='/login'>로그인</Link></li>
             <li><Link to='/user-detail'>회원정보상세</Link></li>
             <li><Link to='/user-modify'>회원정보수정</Link></li>
             <li><Link to='/user-remove'>회원정보삭제</Link></li>
