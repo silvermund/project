@@ -14,7 +14,7 @@ const App = () => {
     <Router>
       <Provider store = {createStore(rootReducer)}>
         <Nav/>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/home' component={Home}/>
         <Redirect exact from={'/'} to={'/home'}/>
         <Route exact path='/counter' component={Counter}/>
         <Route exact path='/user' component={User}/>
